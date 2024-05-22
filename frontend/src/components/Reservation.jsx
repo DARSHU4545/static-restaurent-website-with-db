@@ -18,7 +18,7 @@ const Reservation = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/reservation/send",
+        "https://static-restaurent-website-with-db.onrender.com/reservation/send",
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -36,8 +36,7 @@ const Reservation = () => {
       setDate("");
       navigate("/success");
     } catch (error) {
-      console.log(error);
-      // toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.message);
     }
   };
 
