@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import bodyParser from "body-parser";
 
 // import reservationRouter from "./routes/reservationRoute.js";
 import router from "./routes/reservationRoute.js";
@@ -19,6 +20,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(bodyParser.json());
 
 app.use(express.urlencoded({ extended: true }));
 
