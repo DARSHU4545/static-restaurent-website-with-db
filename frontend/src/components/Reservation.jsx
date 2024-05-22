@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Reservation = () => {
-  const [firstName, setFirstName] = useState("");
+  const [name, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
@@ -27,7 +27,6 @@ const Reservation = () => {
           withCredentials: true,
         }
       );
-      console.log(data);
       toast.success(data.message);
       setFirstName("");
       setLastName("");
@@ -56,7 +55,7 @@ const Reservation = () => {
                 <input
                   type="text"
                   placeholder="First Name"
-                  value={firstName}
+                  value={name}
                   onChange={(e) => setFirstName(e.target.value)}
                 />
                 <input
