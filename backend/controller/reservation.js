@@ -1,13 +1,13 @@
 import { Reservation } from "../models/reservation.js";
 
 const send_reservation = async (req, res) => {
-  const { firstName, lastName, email, date, time, phone } = req.body;
-  if (!firstName || !lastName || !email || !date || !time || !phone) {
-    return res.status(500).json({ success: false });
+  const { name, lastName, email, date, time, phone } = req.body;
+  console.log(req.body);
+  if (!name || !lastName || !email || !date || !time || !phone) {
+    return res.status(500).json({ success: false, message: "invalid form" });
   }
-
   try {
-    await Reservation.create({ firstName, lastName, email, date, time, phone });
+    await Reservation.create({ name, lastName, email, date, time, phone });
     res.status(201).json({
       success: true,
       message: "Reservation Sent Successfully!",

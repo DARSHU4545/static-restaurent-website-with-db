@@ -18,8 +18,8 @@ const Reservation = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://static-restaurent-website-with-db.onrender.com/reservation/send",
-        { firstName, lastName, email, phone, date, time },
+        "https://static-restaurent-website-with-db.onrender.com/api/v1/reservation/send",
+        { name, lastName, email, phone, date, time },
         {
           headers: {
             "Content-Type": "application/json",

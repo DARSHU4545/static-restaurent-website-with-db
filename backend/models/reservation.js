@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import validator from "validator";
 
 const reservationSchema = new mongoose.Schema({
-  firstName: {
+  name: {
     type: String,
     required: true,
     minLength: [3, "First name must be of at least 3 Characters."],
@@ -11,7 +11,7 @@ const reservationSchema = new mongoose.Schema({
   lastName: {
     type: String,
     required: true,
-    minLength: [3, "Last name must be of at least 3 Characters."],
+    minLength: [1, "Last name must be of at least 3 Characters."],
     maxLength: [30, "Last name cannot exceed 30 Characters."],
   },
   date: {
